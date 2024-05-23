@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylee.css">
+    <title>Authentication</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+
+    <div class="register">
+        <form class="form" id="registerForm">
+            <label class="form_label" for="username">Username</label>
+            <input class="form_input" type="text" id="registerUsername" name="username" autocomplete="username" required />
+            <label class="form_label" for="password">Password</label>
+            <input class="form_input" type="password" id="registerPassword" name="password" autocomplete="new-password" required />
+            <label class="form_label" for="email">Email Address</label>
+            <input class="form_input" type="text" id="email" name="email" autocomplete="email" />
+            <button type="submit" id="register">Register</button>
+            
+        </form>
+    </div>
+    <h2>Already have an account?</h2>
+    <div class="login" style="display: block;">
+        <form class="form" id="loginForm">
+            <label class="form_label" for="username">Username</label>
+            <input class="form_input" type="text" id="loginUsername" name="loginUsername" autocomplete="username" required />
+            <label class="form_label" for="password">Password</label>
+            <input class="form_input" type="password" id="loginPassword" name="loginPassword" autocomplete="current-password" required />
+            <button type="submit" id="login">Login</button>
+
+        
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
