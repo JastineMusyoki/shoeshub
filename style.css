@@ -1,0 +1,293 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    margin-bottom: 50px;
+}
+
+.header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: dodgerblue;
+    color: white;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.header nav ul li {
+    display: inline;
+    margin: 0 50px;
+    font-size: 30px;
+}
+
+.header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.auth, .main, .products, .productss, #cart, #orders {
+    margin: 20px 0;
+}
+
+.auth h1, .auth h2, .productss h2, #cart h2, #orders h2 {
+    text-align: center;
+}
+
+.form {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.form_label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form_input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1e90ff;
+}
+
+.main {
+    padding: 20px;
+}
+
+.products .formm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.products .formm input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.products .formm button {
+    padding: 10px 20px;
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: center;
+}
+
+.products .formm button:hover {
+    background-color: #1e90ff;
+}
+
+.productss h2 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.product {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product-details {
+    padding: 15px;
+}
+
+.product-details h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.product-details p {
+    font-size: 0.9em;
+    color: #777;
+    margin: 10px 0;
+}
+
+.product-details span {
+    font-size: 1em;
+    color: #333;
+    font-weight: bold;
+}
+
+.product button {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product button:hover {
+    background-color: #218838;
+}
+
+#cart table, #orders table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#cart th, #cart td, #orders th, #orders td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+#cart img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.quantity-input {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.remove-btn {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.remove-btn:hover {
+    background-color: #c82333;
+}
+
+.cart-total h3 {
+    font-size: 1.5em;
+    text-align: right;
+    margin-top: 10px;
+    color: #333;
+}
+
+footer {
+    display: flex;
+    padding: 10px 0;
+    background-color: dodgerblue;
+    color: #fff;
+    position: relative;
+    
+    bottom: 20px;
+    padding-left: 100px;
+    justify-content: center;
+}
+
+#orders td:first-child {
+    font-weight: bold;
+    color: #333;
+}
+
+#orders td:nth-child(2) {
+    color: #555;
+}
+
+#orders td:nth-child(3) {
+    text-align: left;
+    color: #777;
+}
+
+#orders td:nth-child(4) {
+    font-weight: bold;
+    color: #777;
+
+}
+.orders-table-body {
+    max-height: 400px;
+    overflow-y: auto;
+}
+.contact{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding-right: 50px;
+    font-size: 30px;
+}
+.last{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+}

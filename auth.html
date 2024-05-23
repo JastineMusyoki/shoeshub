@@ -3,36 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylee.css">
-    <title>Authentication</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>E-commerce</title>
 </head>
 <body>
-    <h1>Welcome</h1>
+    <div class="container">
+        <div class="content">
+            <div class="auth">
+                <h1>Welcome</h1>
 
-    <div class="register">
-        <form class="form" id="registerForm">
-            <label class="form_label" for="username">Username</label>
-            <input class="form_input" type="text" id="registerUsername" name="username" autocomplete="username" required />
-            <label class="form_label" for="password">Password</label>
-            <input class="form_input" type="password" id="registerPassword" name="password" autocomplete="new-password" required />
-            <label class="form_label" for="email">Email Address</label>
-            <input class="form_input" type="text" id="email" name="email" autocomplete="email" />
-            <button type="submit" id="register">Register</button>
+                <div class="register">
+                    <form class="form" id="registerForm">
+                        <label class="form_label" for="username">Username</label>
+                        <input class="form_input" type="text" id="registerUsername" name="username" autocomplete="username" required />
+                        <label class="form_label" for="password">Password</label>
+                        <input class="form_input" type="password" id="registerPassword" name="password" autocomplete="new-password" required />
+                        <label class="form_label" for="email">Email Address</label>
+                        <input class="form_input" type="text" id="email" name="email" autocomplete="email" />
+                        <button type="submit" id="register">Register</button>
             
-        </form>
-    </div>
-    <h2>Already have an account?</h2>
-    <div class="login" style="display: block;">
-        <form class="form" id="loginForm">
-            <label class="form_label" for="username">Username</label>
-            <input class="form_input" type="text" id="loginUsername" name="loginUsername" autocomplete="username" required />
-            <label class="form_label" for="password">Password</label>
-            <input class="form_input" type="password" id="loginPassword" name="loginPassword" autocomplete="current-password" required />
-            <button type="submit" id="login">Login</button>
+                    </form>
+                </div>
+                <h2>Already have an account?</h2>
+                <div id="login" class="login" style="display: block;">
+                    <form class="form" id="loginForm">
+                        <label class="form_label" for="username">Username</label>
+                        <input class="form_input" type="text" id="loginUsername" name="loginUsername" autocomplete="username" required />
+                        <label class="form_label" for="password">Password</label>
+                        <input class="form_input" type="password" id="loginPassword" name="loginPassword" autocomplete="current-password" required />
+                        <button type="submit" id="login">Login</button>
 
         
-        </form>
+                    </form>
+                </div>
+            </div>
+            <div class="main">
+                <div class="header">
+                    <h1>My E-commerce App</h1>
+                    <nav>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#cart">Cart</a></li>
+                            <li><a href="#orders">Orders</a></li>
+                            <li><a href="#login">Login</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+                         </ul>
+                    </nav>
+                </div>
+                <section class="products">
+
+                    <form class="formm" id="addProductForm">
+                        <input type="url" id="productImage" name="image" autocomplete="off" required placeholder="Product Image URL">
+                        <input type="text" id="productName" name="name" autocomplete="off" required placeholder="Product Name">
+                        <input type="text" id="productDescription" name="description" autocomplete="off" required placeholder="Product Description">
+                        <input type="number" id="productPrice" name="price" autocomplete="off" required placeholder="Product Price">
+                        
+                        <button type="submit">Add Product</button>
+                    </form>
+                </section>
+                <div id="home" class="productss">
+                    <h2>Products</h2>
+                    <div class="product-list"></div>
+                </div>
+                <section id="cart">
+                    <h2>Your Shopping Cart</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Product</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <div class="cart-total"></div>
+                    <div class="cart-actions">
+                    <button class="btn-continue-shopping">Continue Shopping</button>
+                    <button class="btn-checkout">Proceed to Checkout</button>
+                </section>
+                <section id="orders">
+                    <h2>Your Orders</h2>
+                    <table id="ordersTable">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Date</th>
+                                <th>Products</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                
+                        </tbody>
+                    </table>
+            
+    
+                </section>
+            </div>
+            
+        </div>
     </div>
+    <footer>
+        <p class="last">&copy; 2024 My E-commerce App. All rights reserved.</p>
+        <div class="contact" id="contact">
+            <i class='bx bxs-phone-call' ></i>
+            <i class='bx bxl-whatsapp'></i>
+            <i class='bx bxl-gmail' ></i>
+
+
+        </div>
+           
+        
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

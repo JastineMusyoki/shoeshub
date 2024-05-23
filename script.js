@@ -6,12 +6,10 @@ const btnCheckout = document.querySelector(".btn-checkout");
 const btnContinueShopping = document.querySelector(".btn-continue-shopping");
 const cartTotalElement = document.createElement("div");
 cartTotalElement.classList.add("cart-total");
-//document.querySelector(".cart-actions").insertAdjacentElement("beforebegin", cartTotalElement);
+document.querySelector(".cart-actions").insertAdjacentElement("beforebegin", cartTotalElement);
 
 //reg
-document
-  .getElementById("registerForm")
-  .addEventListener("submit", async function (event) {
+document.getElementById("registerForm").addEventListener("submit", async function (event) {
     event.preventDefault();
     const username = document.getElementById("registerUsername").value;
     const password = document.getElementById("registerPassword").value;
@@ -39,10 +37,9 @@ document
     alert("User registered successfully");
   });
 
+
 //login
-document
-  .getElementById("loginForm")
-  .addEventListener("submit", async function (event) {
+document.getElementById("loginForm").addEventListener("submit", async function (event) {
     event.preventDefault();
     const username = document.getElementById("loginUsername").value;
     const password = document.getElementById("loginPassword").value;
@@ -63,17 +60,28 @@ document
     }
 
     currentUser = user;
+    localStorage.setItem("currentUser", JSON.stringify(user)); // Save user info in localStorage
     alert("Login successful");
-  
+
+    //window.location.href = "index.html";
 
     loadOrders();
   });
 
+// Check if user is logged in when page loads
+document.addEventListener("DOMContentLoaded", () => {
+  const storedUser = localStorage.getItem("currentUser");
+  if (storedUser) {
+    currentUser = JSON.parse(storedUser);
+    loadOrders();
+  }
+});
+
 //addproduct
-document
-  .getElementById("addProductForm")
-  .addEventListener("submit", async function (event) {
+
+document.getElementById("addProductForm").addEventListener("submit", async function (event) {
     event.preventDefault();
+
     const name = document.getElementById("productName").value;
     const description = document.getElementById("productDescription").value;
     const price = parseFloat(document.getElementById("productPrice").value);
@@ -81,16 +89,25 @@ document
 
     const newProduct = { name, description, price, image };
 
-    await fetch(`${apiUrl}/products`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newProduct),
-    });
+    try {
+      const response = await fetch(`${apiUrl}/products`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newProduct),
+      });
 
-    alert("Product added successfully");
-    loadProducts();
+      if (!response.ok) {
+        throw new Error("Failed to add product");
+      }
+
+      alert("Product added successfully");
+      loadProducts();
+    } catch (error) {
+      console.error("Error adding product:", error);
+      alert("Failed to add product");
+    }
   });
 
 //displayproducts
